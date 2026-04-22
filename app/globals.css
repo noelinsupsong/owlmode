@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background: #0a0a0a;
+  color: #ededed;
+}
+
+@layer components {
+  .game-stage canvas {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

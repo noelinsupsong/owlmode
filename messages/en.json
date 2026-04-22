@@ -1,0 +1,361 @@
+{
+  "site": {
+    "name": "RetroArcade",
+    "tagline": "Free classic mini-games in your browser",
+    "welcome": "Welcome to RetroArcade"
+  },
+  "nav": {
+    "home": "Home",
+    "privacy": "Privacy",
+    "licenses": "Licenses"
+  },
+  "common": {
+    "play": "Play",
+    "comingSoon": "Coming soon",
+    "restart": "Restart",
+    "start": "Start",
+    "pause": "Pause",
+    "score": "Score",
+    "highScore": "Best",
+    "back": "Back",
+    "playCount": "Plays",
+    "adSlot": "Ad slot"
+  },
+  "genre": {
+    "puzzle": "Puzzle",
+    "arcade": "Arcade",
+    "board": "Board",
+    "memory": "Memory",
+    "casual": "Casual",
+    "action": "Action",
+    "card": "Card",
+    "shooter": "Shooter",
+    "block": "Block"
+  },
+  "games": {
+    "tic-tac-toe": {
+      "name": "Tic-Tac-Toe",
+      "desc": "Play X against the computer's O. First to get three in a row — horizontal, vertical, or diagonal — wins!",
+      "controls": {
+        "pc": "You play X, the computer plays O. Click any empty cell to place an X; the computer responds with O after a brief pause. There are 8 winning lines (3 rows, 3 columns, 2 diagonals). Complete one first to win. If all 9 cells fill without a winner, it's a draw.",
+        "mobile": "You're X, the CPU is O. Tap any empty cell to place X; the CPU responds shortly. Get 3 in a row (horizontal/vertical/diagonal) to win. All cells filled with no winner = draw."
+      }
+    },
+    "rps": {
+      "name": "Rock Paper Scissors",
+      "desc": "Play rock (✊), paper (✋), or scissors (✌️) against the computer. Aim for a long winning streak!",
+      "controls": {
+        "pc": "Click one of the three buttons (✊/✋/✌️) — the computer makes a random choice at the same time. Rock>scissors, scissors>paper, paper>rock. Tie = draw. Each win streak +1 (🔥), loss resets to 0, draw preserves. Longest streak saved.",
+        "mobile": "Tap one of the three buttons. CPU picks at random. Rock>scissors>paper>rock. Win streak (🔥) +1, loss resets to 0, draw keeps. Longest streak saved."
+      }
+    },
+    "memory-match": {
+      "name": "Memory Match",
+      "desc": "All cards are revealed for 3 seconds at the start. Memorize their positions, then match identical pairs!",
+      "controls": {
+        "pc": "16 cards (8 pairs) shown face-up for 3 seconds (👀 Memorize countdown), then flipped down. Click two cards — match = stays open (green); mismatch = flip back. Clear all 8 pairs in as few moves as possible.",
+        "mobile": "16 cards shown for 3s. Memorize, then tap two cards. Match = stays open (green), mismatch = flip back. Lowest tap count to clear all 8 pairs is your best."
+      }
+    },
+    "snake": {
+      "name": "Snake",
+      "desc": "Eat yellow food to grow your snake. Don't hit the walls or your own body!",
+      "controls": {
+        "pc": "Arrow keys ↑↓←→ or W/A/S/D to change direction. Cannot reverse 180° in one move. Each food = +1 point and grow by 1 segment. Hitting a wall or your own tail ends the game.",
+        "mobile": "Swipe on the canvas (↑↓←→) to change direction. Cannot reverse 180° in one move. Each food = +1 point and grow by 1. Wall or self-collision ends the game."
+      }
+    },
+    "whack-a-mole": {
+      "name": "Whack-a-Mole",
+      "desc": "Click moles as they pop out of 9 holes for 30 seconds — score as much as you can!",
+      "controls": {
+        "pc": "A mole (🐹) randomly pops from one of 9 holes and disappears after a moment. Click mole = +1, click empty hole = -1 (cannot go below 0). Round ends after 30s; best score saved.",
+        "mobile": "A mole (🐹) appears briefly in one of 9 holes. Tap mole = +1, tap empty = -1 (min 0). 30-second round, best saved."
+      }
+    },
+    "2048": {
+      "name": "2048",
+      "desc": "Combine matching number tiles to reach 4 → 8 → 16 → ... → 2048!",
+      "controls": {
+        "pc": "Arrow keys ↑↓←→ slide all 4×4 tiles in one direction. Equal numbers colliding merge into double (2+2=4 ...) and add to score. Each move spawns a new tile (90% 2, 10% 4). No moves left = game over. Reach 2048 to win.",
+        "mobile": "Use the on-screen ↑↓←→ buttons under the board to slide tiles. Equal numbers merge into double. Each move spawns a new tile. No moves left = game over. Reach 2048 to win!"
+      }
+    },
+    "minesweeper": {
+      "name": "Minesweeper",
+      "desc": "Avoid the 10 hidden mines on a 9×9 grid and reveal every safe cell!",
+      "controls": {
+        "pc": "Left-click to reveal, right-click to flag (🚩). The number on a revealed cell counts adjacent mines (8 cells). Empty (0) cells auto-reveal connected empties. Hit mine = instant loss. Reveal all 71 safe cells to win. Faster times are better.",
+        "mobile": "Tap to reveal, long-press to flag. Number = adjacent mine count. Empty cells auto-reveal. Mine = instant loss. All safe cells revealed = win. ※ If long-press doesn't trigger flag on your device, flagging may be limited."
+      }
+    },
+    "breakout": {
+      "name": "Breakout",
+      "desc": "Bounce the ball with your paddle to break all 40 bricks. You have 3 lives!",
+      "controls": {
+        "pc": "Mouse left/right or arrow keys ←→ move the yellow paddle. Ball center hit = nearly straight, edges = wider angle. Ball off the bottom = -1 life. All bricks broken = win, 0 lives = game over. +10 per brick.",
+        "mobile": "Drag finger left/right on the canvas to move the paddle. Ball center hit = nearly straight, edges = wider angle. Off the bottom = -1 life. ※ Desktop recommended."
+      }
+    },
+    "sudoku": {
+      "name": "Sudoku",
+      "desc": "Fill the 9×9 grid with digits 1-9 so every row, column, and 3×3 box contains each digit exactly once!",
+      "controls": {
+        "pc": "Click an empty cell to select it (amber highlight). Click 1-9 button below to enter. Wrong digits show in red. Erase clears entry. Gray clue cells cannot change. Fill every cell correctly to win. Faster = better.",
+        "mobile": "Tap an empty cell to select. Tap 1-9 below to enter. Wrong digits in red. Erase to clear. Gray = clue (locked). Fill every cell correctly to win."
+      }
+    },
+    "pong": {
+      "name": "Pong",
+      "desc": "Bounce the ball past the computer with your left paddle. Miss the ball and your opponent scores!",
+      "controls": {
+        "pc": "Arrow keys ↑↓ or W/S move the left (yellow) paddle. Right paddle is computer-controlled. Ball off the left edge = CPU +1; off the right = you +1. No score limit; your best score is saved when beaten.",
+        "mobile": "This game requires keyboard (↑↓), so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "block-stack": {
+      "name": "Block Stack",
+      "desc": "Seven different shaped blocks fall from above. Move and rotate them to fill horizontal lines!",
+      "controls": {
+        "pc": "← → move, ↑ (W) rotate clockwise, ↓ soft drop, Space hard drop. Filling a line completely = +100 + auto clear. Multiple lines can clear at once. Game over if a new block can't spawn at the top.",
+        "mobile": "This game requires keyboard input, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "flappy": {
+      "name": "Flappy",
+      "desc": "Make the bird flap to dodge through green pipes. One touch and you're done!",
+      "controls": {
+        "pc": "Press Space, ↑, or click the screen to make the bird hop upward. Idle = falls under gravity. Touching top/bottom edge or any pipe ends the game. Pass between a pipe pair = +1.",
+        "mobile": "Tap the screen to flap upward. Idle = falls under gravity. Hitting top/bottom edge or pipe ends the game. Pass a pipe pair = +1 point."
+      }
+    },
+    "fifteen-puzzle": {
+      "name": "15 Puzzle",
+      "desc": "Slide tiles on a 4×4 grid to arrange numbers 1-15 in order from top-left!",
+      "controls": {
+        "pc": "Click a tile horizontally or vertically adjacent to the empty space — it slides into the gap. Arrange 1, 2, 3, 4 / 5, 6, 7, 8 / 9, 10, 11, 12 / 13, 14, 15 with the last cell empty. (See the 'Goal' mini-map.) Solve in as few moves as possible.",
+        "mobile": "Tap a tile next to the empty space — it slides in. Arrange 1→15 with the last cell empty. Refer to the 'Goal' mini-map on the right."
+      }
+    },
+    "connect-four": {
+      "name": "Connect Four",
+      "desc": "Drop red discs into a 7×6 grid to connect four in a row before the computer (yellow)!",
+      "controls": {
+        "pc": "Click one of the seven ▼ buttons at the top to drop a red disc — it lands in the lowest empty slot of that column. Computer (yellow) plays automatically. First to align 4 horizontally, vertically, or diagonally wins. Filled with no winner = draw.",
+        "mobile": "Tap one of the seven ▼ buttons at the top to drop a red disc into that column. CPU (yellow) plays automatically. First 4-in-a-row (any direction) wins."
+      }
+    },
+    "simon-says": {
+      "name": "Simon Says",
+      "desc": "Repeat the lit-up color sequence in order. Each round adds one more step!",
+      "controls": {
+        "pc": "Press Start. The four color buttons flash in a sequence — round 1 has 1 step, round 2 has 2, and so on. Memorize and click in the same order. One mistake = game over. Highest round saved.",
+        "mobile": "Tap Start. Four color buttons flash a sequence (one more step per round). Tap them back in the same order. One mistake = game over. Highest round = best."
+      }
+    },
+    "maze-muncher": {
+      "name": "Maze Muncher",
+      "desc": "Eat all the yellow dots in the maze. Don't get caught by the red ghosts!",
+      "controls": {
+        "pc": "Arrow keys ↑↓←→ or W/A/S/D to move the yellow character. Blue walls block. Each yellow dot = +10. Eat all dots to win. Touching a red ghost = instant loss.",
+        "mobile": "This game requires arrow keys, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "asteroids": {
+      "name": "Asteroid Shooter",
+      "desc": "Pilot a ship and blast asteroids floating through space. Big asteroids split into smaller ones!",
+      "controls": {
+        "pc": "← → rotate, ↑ thrust forward (with inertia), Space fires. Screen wraps. Big asteroid = splits into 2 smaller; small asteroid = destroyed (+100/hit). Crashing into an asteroid ends the game.",
+        "mobile": "This game requires keyboard input, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "solitaire": {
+      "name": "Solitaire (Klondike)",
+      "desc": "Classic Windows Solitaire! Organize the 7 tableau columns and stack each suit A→K on the four foundations to win.",
+      "controls": {
+        "pc": "Click a card to select (orange ring), click another card or empty spot to move. Double-click to auto-send to a foundation. ▼ Tableau: empty columns accept K only; stacks alternate colors (red↔black) with rank one lower (K→Q→...→A). Sequences move together. ▼ Foundation: same suit A→2→...→K. ▼ Click Stock to flip 1 card to waste; when empty, click recycles waste. ↶ Undo for one step back.",
+        "mobile": "Tap a card to select, tap target to move. Double-tap = auto to foundation. Tableau: empty = K only, otherwise alternating colors + 1 rank lower. Foundation: same suit A→K. Tap Stock = flip one card; when empty, tap recycles. ↶ Undo."
+      }
+    },
+    "bubble-shooter": {
+      "name": "Bubble Shooter",
+      "desc": "Stick 3 or more same-color bubbles together to pop them! Game over if bubbles reach the bottom line.",
+      "controls": {
+        "pc": "Move mouse to aim (straight guide line shows). Click to shoot the bottom bubble in that direction. Wall bounces. Cluster of 3+ same-color = pop (+10/bubble). If bubbles cross the bottom boundary = game over.",
+        "mobile": "This game requires mouse-hover aiming, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "space-invaders": {
+      "name": "Space Invaders",
+      "desc": "Defend Earth — destroy all 32 alien invaders before they reach you or shoot you down!",
+      "controls": {
+        "pc": "← → or A/D move the green ship; Space fires (with cooldown). Aliens move side-to-side and step downward at edges. Destroying an alien = +50. Win = all destroyed; lose = alien reaches your row or you're hit.",
+        "mobile": "This game requires keyboard input, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "frogger": {
+      "name": "Frogger",
+      "desc": "Hop your green frog across cars on the road and logs across the river to reach the yellow goal at the top!",
+      "controls": {
+        "pc": "Move one cell at a time with ↑↓←→ or W/A/S/D. Dodge cars on roads; on rivers ride logs (touching water = drown). Logs carry you. Reaching the top = +100 and respawn at start. 3 lives.",
+        "mobile": "This game requires arrow keys, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "dino-run": {
+      "name": "Dino Run",
+      "desc": "Pilot an endlessly running dinosaur — leap over cacti and duck under birds. The longer you survive, the faster it gets!",
+      "controls": {
+        "pc": "Space or ↑ to jump, ↓ to duck. Dino runs forward automatically. Cacti (low) need a jump; birds (high) need a duck (or jump). +1/frame, speed increases every 250 points. Touch obstacle = game over.",
+        "mobile": "This game requires Space/↑ jump and ↓ duck inputs, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "doodle-jump": {
+      "name": "Doodle Jump",
+      "desc": "A character that auto-jumps when it lands on a platform — steer left/right to climb endlessly upward!",
+      "controls": {
+        "pc": "← → or A/D to move (sides wrap). Auto-bounce upward when landing on a platform. Types: green (normal), cyan (moves), purple (breaks). Higher = more score. Falling off bottom = game over.",
+        "mobile": "This game requires keyboard ←→ input, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "helicopter": {
+      "name": "Helicopter",
+      "desc": "Hold the mouse/space to lift the helicopter through a narrowing cave and around obstacles!",
+      "controls": {
+        "pc": "Hold Space, ↑, or mouse/touch to thrust upward; release to fall under gravity. Cave walls narrow and purple obstacles appear. +1/frame, speed up every 500 points. Hitting any wall/obstacle ends the game.",
+        "mobile": "Hold (long-press) the canvas to thrust the helicopter upward; release to fall. Avoid cave walls and purple obstacles. +1/frame, speed up every 500 points."
+      }
+    },
+    "crossy-road": {
+      "name": "Crossy Road",
+      "desc": "Move the chicken endlessly forward through procedurally generated roads and rivers — Frogger's endless mode!",
+      "controls": {
+        "pc": "Move one cell with ↑↓←→ or W/A/S/D. Each ↑ = +1. Hit by car / fall in water = game over. Camera scrolls automatically — staying still too long also ends the game.",
+        "mobile": "This game requires arrow keys, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "galaxy-shooter": {
+      "name": "Galaxy Shooter",
+      "desc": "Vertical-scroll shooter with three enemy patterns. Dodge their bullets and destroy them all!",
+      "controls": {
+        "pc": "←→ or A/D move ship; Space or Z fires. 3 enemy types — orange (wave, +50), pink (dive, +50), purple (curve, 2 HP, +100). Enemy bullet or direct collision = -1 life. 3 lives total.",
+        "mobile": "This game requires keyboard + Space, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "pinball": {
+      "name": "Pinball",
+      "desc": "Classic pinball — flip the ball with two paddles to keep it in play and rack up points on bumpers!",
+      "controls": {
+        "pc": "Press Space to launch the ball. ←/A flips the left paddle, →/D flips the right. 6 bumpers (red/blue 100, yellow 150, green 50, purple 75). Ball off bottom = -1 life of 3.",
+        "mobile": "This game requires keyboard input (←→/Space), so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "bomberman-mini": {
+      "name": "Bomberman Mini",
+      "desc": "Place bombs in a 13×11 grid maze to break brown brick walls and eliminate all 3 purple enemies!",
+      "controls": {
+        "pc": "↑↓←→ or W/A/S/D move one cell. Space drops a bomb at your cell — explodes after ~5s in a cross (2 cells each direction). Brown bricks +10, enemies +200. Gray walls indestructible. Caught by bomb or touched by enemy = game over. All enemies cleared = +500 bonus.",
+        "mobile": "This game requires keyboard input, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "centipede": {
+      "name": "Centipede",
+      "desc": "Shoot the centipede zigzagging down through a mushroom field — split its body and clear each level!",
+      "controls": {
+        "pc": "↑↓←→ or W/A/S/D move ship (bottom 4 rows only). Space or Z fires upward. Head (pink) +100, body (green) +10, mushroom +1. Body shot leaves a new mushroom and splits the centipede. Touching = instant loss. Clear all = next level.",
+        "mobile": "This game requires keyboard + Space, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "tank-battle": {
+      "name": "Tank Battle",
+      "desc": "Pilot the green tank through a maze and destroy 3 red enemy tanks — brown bricks break with cannon fire!",
+      "controls": {
+        "pc": "↑↓←→ or W/A/S/D move and rotate (tank faces last move direction). Space fires a shell forward. Gray walls indestructible; brown bricks break. Each enemy +100. Win = destroy all; lose = enemy shell hits you.",
+        "mobile": "This game requires keyboard input, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "sokoban": {
+      "name": "Sokoban",
+      "desc": "Push every brown box onto a green target (🎯) — the classic warehouse puzzle!",
+      "controls": {
+        "pc": "↑↓←→ or W/A/S/D move character (🙂). Walking into a box pushes it forward (only if empty space behind). Z to undo. All boxes on targets = cleared (📦). Skip jumps levels (3 total).",
+        "mobile": "This game requires arrow keys, so it is limited on mobile. Please play on a desktop."
+      }
+    },
+    "lights-out": {
+      "name": "Lights Out",
+      "desc": "Turn off all lights on a 5×5 grid! Clicking a cell toggles itself and its 4 orthogonal neighbors.",
+      "controls": {
+        "pc": "Click any lit (yellow) cell — it toggles + its 4 adjacent cells also toggle. All cells gray = win. Solve in as few moves as possible.",
+        "mobile": "Tap a lit cell — it toggles itself and its 4 adjacent cells. All cells gray = cleared. Lowest tap count is your best."
+      }
+    },
+    "tower-of-hanoi": {
+      "name": "Tower of Hanoi",
+      "desc": "Move all disks from the left peg to the right peg. Never place a larger disk on a smaller one!",
+      "controls": {
+        "pc": "Pick disk count (3-7). Click a peg to grab its top disk; click another peg to place. Same peg again = deselect. Illegal moves (large on small) ignored. Move all disks to the right peg to win. Min moves = 2ⁿ−1.",
+        "mobile": "Tap to choose disk count (3-7). Tap a peg to pick up its top disk, tap another peg to drop. Same peg = deselect. Move all disks to the right peg to win."
+      }
+    },
+    "klotski": {
+      "name": "Klotski",
+      "desc": "Slide blocks of various sizes to free the red ★ (2×2) block out the bottom-center exit (dashed area)!",
+      "controls": {
+        "pc": "Click a block to select (orange ring); use ↑↓←→ keys or drag with the mouse to move it one cell. Blocks can't overlap or pass walls. Slide the red ★ to the bottom-center dashed area to win. Stage 1·2·3 progression.",
+        "mobile": "Tap a block to select, then drag your finger one cell in any direction (largest distance wins). Blocks can't overlap walls. Slide the red ★ block to the dashed exit area = win. Stage 1·2·3 progression."
+      }
+    },
+    "match-three": {
+      "name": "Jewel (Match-3)",
+      "desc": "Swap adjacent jewels on an 8×8 grid to line up 3+ of the same color horizontally or vertically — pop them!",
+      "controls": {
+        "pc": "Click a jewel, then click an adjacent jewel to swap. 3+ same color in a row/column pops (+10/jewel, combo multiplier). New jewels fall in. 30 moves total — score as high as you can.",
+        "mobile": "Tap a jewel, then tap an adjacent jewel to swap. 3+ same color in a row/column pops. 30-move limit — high score challenge."
+      }
+    },
+    "pipe-connect": {
+      "name": "Pipe Connect",
+      "desc": "Draw a path between matching color dots on a 5×5 grid. Connect all colors and fill every cell to win!",
+      "controls": {
+        "pc": "Hold the mouse on a color dot and drag through adjacent cells to draw a path. Re-press a path cell to trim from there. Crossing another color cuts it. All colors connected + every cell covered = cleared. Stage 1·2·3.",
+        "mobile": "Long-press a color dot and drag through adjacent cells to draw a path. Re-press a mid-path cell to trim. Crossing another color cuts it. Stage 1·2·3 progression."
+      }
+    },
+    "mahjong-solitaire": {
+      "name": "Mahjong Solitaire",
+      "desc": "Pair up matching mahjong tiles and remove them all! Only tiles with a free left or right side can be selected.",
+      "controls": {
+        "pc": "Click a tile to select (orange highlight); clicking another tile of the same symbol removes both. Different symbol = move selection. Tiles with both sides blocked are gray and locked. Clear the board to win.",
+        "mobile": "Tap a tile to select; tap another with the same symbol to remove both. Tiles with both sides blocked are gray. Clear the board to win."
+      }
+    },
+    "word-search": {
+      "name": "Word Search",
+      "desc": "Find hidden English words in a 10×10 grid by drag-selecting them!",
+      "controls": {
+        "pc": "Press the first letter cell, drag in one of 8 directions (horizontal/vertical/diagonal) to the last letter, then release. Correct = green highlight + struck through in list. Forward or reversed both work. Puzzle 1/2/3 selectable.",
+        "mobile": "Long-press the first letter cell and drag with your finger to the last letter (8 directions), then release. Correct = green + struck through in list. Forward/reverse both work. Puzzle 1/2/3 selectable."
+      }
+    },
+    "reversi": {
+      "name": "Reversi (Othello)",
+      "desc": "Battle the computer (white) on an 8×8 board — flank discs to flip them! Most discs at the end wins.",
+      "controls": {
+        "pc": "You are black (●), computer is white. Click an empty cell — every line of opponent discs flanked by your color flips. A move must flip at least one disc (yellow dots = legal moves). Can't move = turn skipped; both can't = game ends, most discs wins.",
+        "mobile": "You = black (●), CPU = white. Tap an empty cell to place a disc — flank lines flip. Yellow dots = legal moves. Can't move = skipped; game ends with most-discs win."
+      }
+    },
+    "air-hockey": {
+      "name": "Air Hockey",
+      "desc": "Use your paddle to drive the yellow puck into the computer's goal! First to 5 points wins.",
+      "controls": {
+        "pc": "Move your green paddle with the mouse in the bottom half of the table. Strike the puck quickly into the top yellow goal for +1. Red CPU paddle defends and attacks automatically. First to 5 wins.",
+        "mobile": "This game requires mouse aiming, so it is limited on mobile. Please play on a desktop."
+      }
+    }
+  },
+  "footer": {
+    "made": "All games on this site are self-made or based on MIT/CC0 open source code.",
+    "copyright": "© 2026 RetroArcade"
+  }
+}
