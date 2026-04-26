@@ -1,4 +1,7 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import type { GameGenre, GameMeta } from '@/lib/games';
 
@@ -14,6 +17,25 @@ const GENRE_BAR: Record<GameGenre, string> = {
   block: 'bg-violet-500',
 };
 
+async function findThumbnail(slug: string): Promise<string | null> {
+  const exts = ['png', 'webp', 'jpg', 'jpeg'];
+  for (const ext of exts) {
+    const p = path.join(
+      process.cwd(),
+      'public',
+      'thumbnails',
+      `${slug}.${ext}`
+    );
+    try {
+      await fs.access(p);
+      return `/thumbnails/${slug}.${ext}`;
+    } catch {
+      // not found, try next
+    }
+  }
+  return null;
+}
+
 export default async function GameCard({
   game,
   locale,
@@ -23,31 +45,48 @@ export default async function GameCard({
 }) {
   const t = await getTranslations();
   const name = t(`games.${game.slug}.name`);
+  const desc = t(`games.${game.slug}.desc`);
+  const thumb = await findThumbnail(game.slug);
 
   const inner = (
     <div
-      className={`group relative aspect-square overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 transition duration-200 ${
+      className={`group relative flex flex-col overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 transition duration-200 ${
         game.enabled
           ? 'hover:-translate-y-0.5 hover:border-amber-400/60 hover:bg-neutral-800/80'
           : 'opacity-40'
       }`}
     >
-      <div className={`absolute inset-x-0 top-0 h-0.5 ${GENRE_BAR[game.genre]}`} />
+      <div className={`absolute inset-x-0 top-0 z-10 h-0.5 ${GENRE_BAR[game.genre]}`} />
 
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-5xl opacity-90 transition duration-200 group-hover:scale-105 sm:text-6xl">
-          {game.icon}
-        </span>
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-950">
+        {thumb ? (
+          <Image
+            src={thumb}
+            alt={name}
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+            className="object-cover transition duration-200 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-5xl opacity-90 transition duration-200 group-hover:scale-105 sm:text-6xl">
+              {game.icon}
+            </span>
+          </div>
+        )}
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 p-3">
-        <h3 className="truncate text-center font-mono text-sm font-semibold text-neutral-100">
+      <div className="flex flex-col gap-1 p-3">
+        <h3 className="truncate font-mono text-sm font-semibold text-neutral-100">
           {name}
         </h3>
+        <p className="line-clamp-2 text-xs leading-snug text-neutral-400">
+          {desc}
+        </p>
       </div>
 
       {!game.enabled && (
-        <div className="absolute right-2 top-2 rounded bg-black/70 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-neutral-300">
+        <div className="absolute right-2 top-2 z-20 rounded bg-black/70 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-neutral-300">
           {t('common.comingSoon')}
         </div>
       )}

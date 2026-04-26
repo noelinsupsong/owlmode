@@ -9,6 +9,13 @@ body {
 }
 
 @layer components {
+  .game-stage {
+    /* Block page panning when the user swipes inside the game area */
+    touch-action: none;
+    overscroll-behavior: contain;
+    -webkit-user-select: none;
+    user-select: none;
+  }
   .game-stage canvas {
     width: 100%;
     max-width: 640px;
@@ -17,6 +24,11 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    touch-action: none;
+  }
+  /* Buttons inside the game still need to receive taps quickly */
+  .game-stage button {
+    touch-action: manipulation;
   }
 }
 
