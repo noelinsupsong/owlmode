@@ -55,7 +55,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'site' });
   const title = `${t('name')} — ${t('tagline')}`;
   return {
-    metadataBase: new URL('https://owlmode.vercel.app'),
+    metadataBase: new URL('https://owl-mode.com'),
     title: {
       default: title,
       template: `%s — ${t('name')}`,
