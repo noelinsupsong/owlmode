@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
 import {
   getMessages,
@@ -16,6 +17,8 @@ import { locales, type Locale } from '@/i18n/request';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import '../globals.css';
+
+const ADSENSE_CLIENT = 'ca-pub-2614741672646680';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -106,7 +109,16 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${inter.variable} ${notoKr.variable} ${jetbrains.variable} ${pressStart.variable}`}
     >
+      <head>
+        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
+      </head>
       <body className="min-h-screen bg-neutral-950 font-sans text-neutral-100 antialiased">
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-screen flex-col">
             <Header locale={locale} />
