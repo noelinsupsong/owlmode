@@ -53,12 +53,29 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'site' });
+  const title = `${t('name')} — ${t('tagline')}`;
   return {
+    metadataBase: new URL('https://owlmode.vercel.app'),
     title: {
-      default: `${t('name')} — ${t('tagline')}`,
+      default: title,
       template: `%s — ${t('name')}`,
     },
     description: t('tagline'),
+    icons: {
+      icon: '/owl.svg',
+    },
+    openGraph: {
+      title,
+      description: t('tagline'),
+      siteName: t('name'),
+      type: 'website',
+      locale: locale === 'ko' ? 'ko_KR' : 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: t('tagline'),
+    },
   };
 }
 

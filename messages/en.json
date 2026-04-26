@@ -1,8 +1,8 @@
 {
   "site": {
-    "name": "RetroArcade",
+    "name": "Owlmode",
     "tagline": "Free classic mini-games in your browser",
-    "welcome": "Welcome to RetroArcade"
+    "welcome": "Welcome to Owlmode"
   },
   "nav": {
     "home": "Home",
@@ -356,6 +356,6 @@
   },
   "footer": {
     "made": "All games on this site are self-made or based on MIT/CC0 open source code.",
-    "copyright": "© 2026 RetroArcade"
+    "copyright": "© 2026 Owlmode"
   }
 }

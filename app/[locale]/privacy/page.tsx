@@ -16,7 +16,7 @@ const CONTENT: Record<string, { title: string; body: React.ReactNode }> = {
     body: (
       <>
         <p>
-          RetroArcade(이하 &quot;사이트&quot;)는 사용자의 개인정보를 소중히
+          Owlmode(이하 &quot;사이트&quot;)는 사용자의 개인정보를 소중히
           여기며, 본 방침에 따라 처리합니다.
         </p>
         <h2 className="mt-6 text-xl font-bold">1. 수집하는 정보</h2>
@@ -55,7 +55,7 @@ const CONTENT: Record<string, { title: string; body: React.ReactNode }> = {
     body: (
       <>
         <p>
-          RetroArcade (the &quot;Site&quot;) values your privacy and processes
+          Owlmode (the &quot;Site&quot;) values your privacy and processes
           information according to this policy.
         </p>
         <h2 className="mt-6 text-xl font-bold">1. Information We Collect</h2>

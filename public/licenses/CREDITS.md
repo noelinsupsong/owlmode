@@ -1,6 +1,6 @@
 # Open Source Credits
 
-All 20 games on this site are **built from scratch** for RetroArcade.
+All games on this site are **built from scratch** for Owlmode.
 Game rules referenced are public-domain classics; no third-party game source code
 was forked. UI assets use only emoji (Unicode standard) or self-drawn primitives.
 
