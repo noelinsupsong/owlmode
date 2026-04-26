@@ -70,11 +70,21 @@ export async function generateMetadata({
       siteName: t('name'),
       type: 'website',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
+      url: `https://owl-mode.com/${locale}`,
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: 'Owlmode — free retro mini-games',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description: t('tagline'),
+      images: ['/opengraph-image'],
     },
   };
 }
