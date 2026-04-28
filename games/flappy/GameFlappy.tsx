@@ -180,8 +180,10 @@ export default function GameFlappy() {
         data-running={running}
         onClick={flap}
         onTouchStart={(e) => {
-          e.preventDefault();
-          flap();
+          if (running) {
+            e.preventDefault();
+            flap();
+          }
         }}
         className="rounded border border-neutral-800 cursor-pointer"
       />

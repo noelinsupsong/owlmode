@@ -203,8 +203,10 @@ export default function GameHelicopter() {
         onMouseUp={() => (stateRef.current.pressing = false)}
         onMouseLeave={() => (stateRef.current.pressing = false)}
         onTouchStart={(e) => {
-          e.preventDefault();
-          stateRef.current.pressing = true;
+          if (running) {
+            e.preventDefault();
+            stateRef.current.pressing = true;
+          }
         }}
         onTouchEnd={() => (stateRef.current.pressing = false)}
         className="rounded border border-neutral-800 cursor-pointer"

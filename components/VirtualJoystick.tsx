@@ -5,7 +5,7 @@ import { useRef, useState, useEffect } from 'react';
 const BASE_SIZE = 144;
 const KNOB_SIZE = 60;
 const MAX_DIST = (BASE_SIZE - KNOB_SIZE) / 2;
-const THRESHOLD = MAX_DIST * 0.35;
+const THRESHOLD = MAX_DIST * 0.3;
 
 const ALL_KEYS = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'] as const;
 
@@ -38,14 +38,12 @@ export default function VirtualJoystick() {
   useEffect(() => {
     const set = activeKeysRef.current;
     return () => {
-      for (const k of Array.from(set)) {
-        dispatchKeyUp(k);
-      }
+      for (const k of Array.from(set)) dispatchKeyUp(k);
       set.clear();
     };
   }, []);
 
-  function updateFromPointer(clientX: number, clientY: number) {
+  function updateFromXY(clientX: number, clientY: number) {
     if (!baseRef.current) return;
     const rect = baseRef.current.getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
@@ -64,57 +62,70 @@ export default function VirtualJoystick() {
       return;
     }
 
-    const wantLeft = dx < -THRESHOLD;
-    const wantRight = dx > THRESHOLD;
-    const wantUp = dy < -THRESHOLD;
-    const wantDown = dy > THRESHOLD;
-
-    if (wantLeft) press('ArrowLeft');
+    if (dx < -THRESHOLD) press('ArrowLeft');
     else release('ArrowLeft');
-    if (wantRight) press('ArrowRight');
+    if (dx > THRESHOLD) press('ArrowRight');
     else release('ArrowRight');
-    if (wantUp) press('ArrowUp');
+    if (dy < -THRESHOLD) press('ArrowUp');
     else release('ArrowUp');
-    if (wantDown) press('ArrowDown');
+    if (dy > THRESHOLD) press('ArrowDown');
     else release('ArrowDown');
   }
 
-  function onPointerDown(e: React.PointerEvent) {
-    e.preventDefault();
-    e.currentTarget.setPointerCapture?.(e.pointerId);
-    updateFromPointer(e.clientX, e.clientY);
-  }
-  function onPointerMove(e: React.PointerEvent) {
-    if (e.buttons === 0 && e.pointerType === 'mouse') return;
-    updateFromPointer(e.clientX, e.clientY);
-  }
-  function onPointerEnd() {
+  function handleEnd() {
     setKnobPos({ x: 0, y: 0 });
     releaseAll();
+  }
+
+  // ── Mouse: track on window so drag works outside the base ────────
+  function onMouseDown(e: React.MouseEvent) {
+    e.preventDefault();
+    updateFromXY(e.clientX, e.clientY);
+    const onMove = (ev: MouseEvent) => updateFromXY(ev.clientX, ev.clientY);
+    const onUp = () => {
+      handleEnd();
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+    };
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+  }
+
+  // ── Touch: React handlers (each touch sticks to the source element) ─
+  function onTouchStart(e: React.TouchEvent) {
+    e.preventDefault();
+    const t = e.touches[0];
+    if (t) updateFromXY(t.clientX, t.clientY);
+  }
+  function onTouchMove(e: React.TouchEvent) {
+    e.preventDefault();
+    const t = e.touches[0];
+    if (t) updateFromXY(t.clientX, t.clientY);
   }
 
   return (
     <div
       ref={baseRef}
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerEnd}
-      onPointerCancel={onPointerEnd}
+      onMouseDown={onMouseDown}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={handleEnd}
+      onTouchCancel={handleEnd}
       onContextMenu={(e) => e.preventDefault()}
-      className="relative flex select-none items-center justify-center rounded-full border-2 border-neutral-700 bg-neutral-800/70 shadow-inner touch-none"
-      style={{ width: BASE_SIZE, height: BASE_SIZE }}
+      className="relative flex select-none items-center justify-center rounded-full border-2 border-neutral-700 bg-neutral-800/70 shadow-inner"
+      style={{ width: BASE_SIZE, height: BASE_SIZE, touchAction: 'none' }}
     >
-      {/* center marker */}
-      <div className="absolute h-2 w-2 rounded-full bg-neutral-700" />
-
-      {/* knob */}
+      <div className="pointer-events-none absolute h-2 w-2 rounded-full bg-neutral-700" />
       <div
         className="pointer-events-none absolute rounded-full bg-amber-500 shadow-lg ring-2 ring-amber-300/50"
         style={{
           width: KNOB_SIZE,
           height: KNOB_SIZE,
           transform: `translate(${knobPos.x}px, ${knobPos.y}px)`,
-          transition: knobPos.x === 0 && knobPos.y === 0 ? 'transform 120ms ease-out' : 'none',
+          transition:
+            knobPos.x === 0 && knobPos.y === 0
+              ? 'transform 120ms ease-out'
+              : 'none',
         }}
       />
     </div>
