@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 type Grid = number[][];
 const SIZE = 4;
@@ -190,21 +191,14 @@ export default function Game2048() {
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-1 sm:hidden">
-        <div />
-        <button onClick={() => handleMove('up')} className="rounded bg-neutral-800 px-3 py-2">↑</button>
-        <div />
-        <button onClick={() => handleMove('left')} className="rounded bg-neutral-800 px-3 py-2">←</button>
-        <button onClick={() => handleMove('down')} className="rounded bg-neutral-800 px-3 py-2">↓</button>
-        <button onClick={() => handleMove('right')} className="rounded bg-neutral-800 px-3 py-2">→</button>
-      </div>
-
       <button
         onClick={reset}
         className="rounded bg-amber-500 px-4 py-2 font-mono text-sm font-bold text-neutral-900 hover:bg-amber-400"
       >
         {t('restart')}
       </button>
+
+      <TouchControls preset="dpad" />
     </div>
   );
 }

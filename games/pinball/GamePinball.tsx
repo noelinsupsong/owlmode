@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 const W = 360;
 const H = 540;
@@ -254,6 +255,8 @@ export default function GamePinball() {
         </button>
       )}
       <p className="font-mono text-xs text-neutral-500">←/A: left flipper · →/D: right flipper · Space: launch ball</p>
+
+      <TouchControls preset="lr-fire" />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 const COLS = 10;
 const ROWS = 20;
@@ -247,6 +248,8 @@ export default function GameBlockStack() {
       )}
 
       <p className="font-mono text-xs text-neutral-500">←→: move · ↑: rotate · ↓: soft drop · Space: hard drop</p>
+
+      <TouchControls preset="block-stack" />
     </div>
   );
 }

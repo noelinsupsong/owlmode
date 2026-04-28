@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 const COLS = 13;
 const ROWS = 13;
@@ -238,6 +239,8 @@ export default function GameFrogger() {
       )}
 
       <p className="font-mono text-xs text-neutral-500">↑↓←→ or WASD</p>
+
+      <TouchControls preset="dpad" />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 const COLS = 17;
 const ROWS = 13;
@@ -239,6 +240,8 @@ export default function GameTankBattle() {
         </button>
       )}
       <p className="font-mono text-xs text-neutral-500">↑↓←→/WASD: move/turn · Space: fire</p>
+
+      <TouchControls preset="dpad-fire" />
     </div>
   );
 }

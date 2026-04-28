@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 const W = 480;
 const H = 480;
@@ -219,6 +220,8 @@ export default function GameGalaxyShooter() {
         </button>
       )}
       <p className="font-mono text-xs text-neutral-500">←→/AD: move · Space/Z: fire</p>
+
+      <TouchControls preset="lr-fire" />
     </div>
   );
 }

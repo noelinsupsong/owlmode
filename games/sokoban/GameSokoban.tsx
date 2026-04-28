@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 const STORAGE_KEY = 'highScore:sokoban';
 
@@ -213,6 +214,8 @@ export default function GameSokoban() {
       </div>
 
       <p className="font-mono text-xs text-neutral-500">↑↓←→/WASD: move · Z: undo</p>
+
+      <TouchControls preset="dpad" />
     </div>
   );
 }

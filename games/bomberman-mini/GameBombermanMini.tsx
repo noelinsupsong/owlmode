@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 const COLS = 13;
 const ROWS = 11;
@@ -246,6 +247,8 @@ export default function GameBombermanMini() {
         </button>
       )}
       <p className="font-mono text-xs text-neutral-500">↑↓←→/WASD: move · Space: drop bomb</p>
+
+      <TouchControls preset="dpad-bomb" />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 const COLS = 20;
 const ROWS = 22;
@@ -217,6 +218,8 @@ export default function GameCentipede() {
         </button>
       )}
       <p className="font-mono text-xs text-neutral-500">↑↓←→/WASD: move (bottom 4 rows only) · Space/Z: fire</p>
+
+      <TouchControls preset="dpad-fire" />
     </div>
   );
 }

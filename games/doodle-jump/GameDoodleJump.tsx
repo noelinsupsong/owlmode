@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 const W = 320;
 const H = 480;
@@ -208,6 +209,8 @@ export default function GameDoodleJump() {
       )}
 
       <p className="font-mono text-xs text-neutral-500">←→ or A/D to move (sides wrap around)</p>
+
+      <TouchControls preset="lr" />
     </div>
   );
 }

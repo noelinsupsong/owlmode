@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TouchControls from '@/components/TouchControls';
 
 const W = 600;
 const H = 200;
@@ -206,6 +207,8 @@ export default function GameDinoRun() {
       )}
 
       <p className="font-mono text-xs text-neutral-500">Space/↑: jump · ↓: duck</p>
+
+      <TouchControls preset="jump-duck" />
     </div>
   );
 }
