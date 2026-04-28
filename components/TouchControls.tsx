@@ -1,6 +1,7 @@
 'use client';
 
 import { useIsTouchDevice } from '@/hooks/useDevice';
+import VirtualJoystick from './VirtualJoystick';
 
 type Preset =
   | 'dpad'
@@ -59,22 +60,6 @@ function PadButton({
   );
 }
 
-function DPad() {
-  return (
-    <div className="grid grid-cols-3 gap-2">
-      <div />
-      <PadButton label="↑" k="ArrowUp" />
-      <div />
-      <PadButton label="←" k="ArrowLeft" />
-      <div />
-      <PadButton label="→" k="ArrowRight" />
-      <div />
-      <PadButton label="↓" k="ArrowDown" />
-      <div />
-    </div>
-  );
-}
-
 function LR() {
   return (
     <div className="flex gap-3">
@@ -92,12 +77,12 @@ export default function TouchControls({ preset }: { preset: Preset }) {
 
   switch (preset) {
     case 'dpad':
-      body = <DPad />;
+      body = <VirtualJoystick />;
       break;
     case 'dpad-fire':
       body = (
         <>
-          <DPad />
+          <VirtualJoystick />
           <PadButton label="🔥" k=" " variant="fire" size="h-16 w-16 text-2xl" />
         </>
       );
@@ -105,7 +90,7 @@ export default function TouchControls({ preset }: { preset: Preset }) {
     case 'dpad-bomb':
       body = (
         <>
-          <DPad />
+          <VirtualJoystick />
           <PadButton label="💣" k=" " variant="fire" size="h-16 w-16 text-2xl" />
         </>
       );
