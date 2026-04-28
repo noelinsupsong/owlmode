@@ -207,7 +207,7 @@ export default function GameAirHockey() {
 
       {over && <div className={`rounded px-4 py-2 font-mono ${over === 'win' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-rose-500/20 text-rose-300'}`}>{over === 'win' ? '🎉 Victory 5–' + scores.c : 'Lose ' + scores.p + '–5'}</div>}
 
-      <canvas ref={canvasRef} width={W} height={H} onMouseMove={onMove} className="rounded border border-neutral-800 cursor-none" />
+      <canvas ref={canvasRef} width={W} height={H} data-running={running} onMouseMove={onMove} className="rounded border border-neutral-800 cursor-none" />
 
       {!running && (
         <button onClick={start} className="rounded bg-amber-500 px-4 py-2 font-mono text-sm font-bold text-neutral-900 hover:bg-amber-400">

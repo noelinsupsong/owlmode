@@ -177,12 +177,13 @@ export default function GameFlappy() {
         ref={canvasRef}
         width={W}
         height={H}
+        data-running={running}
         onClick={flap}
         onTouchStart={(e) => {
           e.preventDefault();
           flap();
         }}
-        className="touch-none rounded border border-neutral-800 cursor-pointer"
+        className="rounded border border-neutral-800 cursor-pointer"
       />
 
       {!running && (

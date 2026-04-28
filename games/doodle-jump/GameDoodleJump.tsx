@@ -200,7 +200,7 @@ export default function GameDoodleJump() {
 
       {over && <div className="rounded bg-rose-500/20 px-4 py-2 font-mono text-rose-300">Game Over · {score}</div>}
 
-      <canvas ref={canvasRef} width={W} height={H} className="rounded border border-neutral-800" />
+      <canvas ref={canvasRef} width={W} height={H} data-running={running} className="rounded border border-neutral-800" />
 
       {!running && (
         <button onClick={start} className="rounded bg-amber-500 px-4 py-2 font-mono text-sm font-bold text-neutral-900 hover:bg-amber-400">

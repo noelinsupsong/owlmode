@@ -198,6 +198,7 @@ export default function GameHelicopter() {
         ref={canvasRef}
         width={W}
         height={H}
+        data-running={running}
         onMouseDown={() => (stateRef.current.pressing = true)}
         onMouseUp={() => (stateRef.current.pressing = false)}
         onMouseLeave={() => (stateRef.current.pressing = false)}
@@ -206,7 +207,7 @@ export default function GameHelicopter() {
           stateRef.current.pressing = true;
         }}
         onTouchEnd={() => (stateRef.current.pressing = false)}
-        className="touch-none rounded border border-neutral-800 cursor-pointer"
+        className="rounded border border-neutral-800 cursor-pointer"
       />
 
       {!running && (

@@ -25,7 +25,7 @@ function releaseKey(key: string) {
 function PadButton({
   label,
   k,
-  size = 'h-14 w-14 text-2xl',
+  size = 'h-20 w-20 text-3xl',
   variant = 'dir',
 }: {
   label: string;
@@ -83,7 +83,7 @@ export default function TouchControls({ preset }: { preset: Preset }) {
       body = (
         <>
           <VirtualJoystick />
-          <PadButton label="🔥" k=" " variant="fire" size="h-16 w-16 text-2xl" />
+          <PadButton label="🔥" k=" " variant="fire" size="h-24 w-24 text-4xl" />
         </>
       );
       break;
@@ -91,7 +91,7 @@ export default function TouchControls({ preset }: { preset: Preset }) {
       body = (
         <>
           <VirtualJoystick />
-          <PadButton label="💣" k=" " variant="fire" size="h-16 w-16 text-2xl" />
+          <PadButton label="💣" k=" " variant="fire" size="h-24 w-24 text-4xl" />
         </>
       );
       break;
@@ -102,7 +102,7 @@ export default function TouchControls({ preset }: { preset: Preset }) {
       body = (
         <>
           <LR />
-          <PadButton label="🔥" k=" " variant="fire" size="h-16 w-16 text-2xl" />
+          <PadButton label="🔥" k=" " variant="fire" size="h-24 w-24 text-4xl" />
         </>
       );
       break;
@@ -110,7 +110,7 @@ export default function TouchControls({ preset }: { preset: Preset }) {
       body = (
         <>
           <LR />
-          <PadButton label="⤴" k=" " variant="jump" size="h-16 w-16 text-2xl" />
+          <PadButton label="⤴" k=" " variant="jump" size="h-24 w-24 text-4xl" />
         </>
       );
       break;
@@ -118,7 +118,7 @@ export default function TouchControls({ preset }: { preset: Preset }) {
       body = (
         <>
           <PadButton label="↓" k="ArrowDown" size="h-14 w-14 text-2xl" />
-          <PadButton label="⤴" k=" " variant="jump" size="h-16 w-16 text-2xl" />
+          <PadButton label="⤴" k=" " variant="jump" size="h-24 w-24 text-4xl" />
         </>
       );
       break;
@@ -138,7 +138,7 @@ export default function TouchControls({ preset }: { preset: Preset }) {
             <PadButton label="↑" k="ArrowUp" variant="jump" />
             <PadButton label="→" k="ArrowRight" />
           </div>
-          <PadButton label="🔥" k=" " variant="fire" size="h-16 w-16 text-2xl" />
+          <PadButton label="🔥" k=" " variant="fire" size="h-24 w-24 text-4xl" />
         </>
       );
       break;
@@ -151,7 +151,7 @@ export default function TouchControls({ preset }: { preset: Preset }) {
             <PadButton label="→" k="ArrowRight" />
             <PadButton label="↓" k="ArrowDown" />
           </div>
-          <PadButton label="⤓" k=" " variant="fire" size="h-16 w-16 text-2xl" />
+          <PadButton label="⤓" k=" " variant="fire" size="h-24 w-24 text-4xl" />
         </>
       );
       break;

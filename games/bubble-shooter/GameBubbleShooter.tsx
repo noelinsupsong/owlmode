@@ -231,7 +231,7 @@ export default function GameBubbleShooter() {
         <div className="rounded bg-rose-500/20 px-4 py-2 font-mono text-rose-300">Game Over</div>
       )}
 
-      <canvas ref={canvasRef} width={W} height={H} onMouseMove={onMove} onClick={shoot} className="rounded border border-neutral-800 cursor-crosshair" />
+      <canvas ref={canvasRef} width={W} height={H} data-running={!over} onMouseMove={onMove} onClick={shoot} className="rounded border border-neutral-800 cursor-crosshair" />
 
       <button onClick={reset} className="rounded bg-amber-500 px-4 py-2 font-mono text-sm font-bold text-neutral-900 hover:bg-amber-400">
         {t('restart')}

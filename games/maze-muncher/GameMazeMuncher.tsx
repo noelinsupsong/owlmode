@@ -240,7 +240,7 @@ export default function GameMazeMuncher() {
         </div>
       )}
 
-      <canvas ref={canvasRef} width={COLS * CELL} height={ROWS * CELL} className="rounded border border-neutral-800" />
+      <canvas ref={canvasRef} width={COLS * CELL} height={ROWS * CELL} data-running={running} className="rounded border border-neutral-800" />
 
       {!running && (
         <button onClick={start} className="rounded bg-amber-500 px-4 py-2 font-mono text-sm font-bold text-neutral-900 hover:bg-amber-400">

@@ -207,7 +207,8 @@ export default function GameSnake() {
         ref={canvasRef}
         width={GRID * CELL}
         height={GRID * CELL}
-        className="touch-none rounded border border-neutral-800"
+        data-running={running}
+        className="rounded border border-neutral-800"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       />

@@ -233,7 +233,7 @@ export default function GameTankBattle() {
         <span className="text-neutral-400">{t('highScore')}: <span className="text-neutral-100">{highScore}</span></span>
       </div>
       {over && <div className={`rounded px-4 py-2 font-mono ${over === 'win' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-rose-500/20 text-rose-300'}`}>{over === 'win' ? '🎉 Victory!' : '💥 Destroyed'}</div>}
-      <canvas ref={canvasRef} width={W} height={H} className="rounded border border-neutral-800" />
+      <canvas ref={canvasRef} width={W} height={H} data-running={running} className="rounded border border-neutral-800" />
       {!running && (
         <button onClick={start} className="rounded bg-amber-500 px-4 py-2 font-mono text-sm font-bold text-neutral-900 hover:bg-amber-400">
           {over ? t('restart') : t('start')}
